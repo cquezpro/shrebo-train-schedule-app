@@ -1,0 +1,84 @@
+default: 
+ - 'watch'
+ 
+dist-staff:
+ - 'set-staff'
+ - 'build'
+ 
+dist-customer:
+ - 'set-customer'
+ - 'build'
+ 
+set-staff:
+ - 'copy:staff'
+ - 'replace:staff'
+ 
+set-customer:
+ - 'copy:customer'
+ - 'replace:customer'
+ 
+set-webapp:
+ - 'replace:webapp'
+ 
+set-cordova:
+ - 'replace:cordova'
+ 
+set-testserver:
+ - 'replace:testserver'
+ 
+set-localserver:
+ - 'replace:localserver' 
+
+set-devserver:
+ - 'replace:devserver' 
+
+set-stagingserver:
+ - 'replace:stagingserver'
+
+
+# adopted from https://gist.github.com/jonathandixon/7418730
+init-ios:
+ - 'clean:cordova'
+ - 'mkdir:cordova'
+ - 'cordovacli:add_ios'
+ - 'cordovacli:add_plugins'
+ - 'update-ios'
+
+init-android:
+ - 'clean:cordova'
+ - 'mkdir:cordova'
+ - 'cordovacli:add_android'
+ - 'cordovacli:add_plugins'
+ - 'update-android'
+
+update-ios:
+ - 'cordovacli:prepare_ios'
+ - 'copy:platform_merges'
+ - 'copy:resources_ios'
+
+update-android:
+ - 'cordovacli:prepare_android'
+ - 'copy:platform_merges'
+ - 'copy:resources_android'
+
+build:
+ - 'clean:default'
+ - 'copy:main'
+ - 'uglify'
+ 
+build-ios:
+ - 'build'
+ - 'copy:resources_ios'
+ - 'cordovacli:build_ios'
+ 
+build-android:
+ - 'build'
+ - 'copy:resources_android'
+ - 'cordovacli:build_android'
+ 
+server:
+ - 'connect:server' 
+ 
+cordova-serve:
+ - 'cordovacli:serve'
+ 

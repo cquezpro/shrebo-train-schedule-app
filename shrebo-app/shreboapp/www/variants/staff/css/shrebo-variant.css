@@ -1,0 +1,28 @@
+/* voting radiobox active */
+.vote-radiobox .active .round_circle {
+    background-color: #78b22b !important;
+}
+
+.ui-page-active {
+	position:fixed;
+	/* height: 100%; */
+	top: 0;
+	visibility: visible;
+	width: 100%;
+	z-index: 2;
+	overflow: hidden;
+}
+
+body {
+	background: #587aff;
+}
+
+.page, .app, .content {
+	background: #587aff;
+}
+
+/* staff service selection */
+ul.body_row li.service.active {
+	background: rgba(47, 77, 147, 1);
+}
+

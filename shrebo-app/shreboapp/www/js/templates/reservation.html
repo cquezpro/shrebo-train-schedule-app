@@ -1,0 +1,107 @@
+<style type="text/css">
+	.custom-radio {
+		width:21px;
+		height:21px;
+		display:inline-block;
+		position:relative;
+		z-index:1;
+		top:3px;
+		background:url("img/radio.png") no-repeat;
+	}
+	/*.custom-radio:hover{
+	 background: url("radio-hover.png") no-repeat;
+	 }*/
+	.custom-radio.selected {
+		background:url("img/radio-selected.png") no-repeat;
+	}
+	.custom-radio input[type="radio"] {
+		margin:1px;
+		position:absolute;
+		z-index:2;
+		cursor:pointer;
+		outline:none;
+		opacity:0;
+		/* CSS hacks for older browsers */
+		_noFocusLine:expression(this.hideFocus=true);
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter:alpha(opacity=0);
+		-khtml-opacity:0;
+		-moz-opacity:0;
+	}
+	/* fix conflict with jquery */
+	.fade.in {
+		opacity: 1;
+	}
+	.ui-page {
+		z-index: 1020 !important;
+	}
+	/* don't allow scrollbars */
+	.modal {
+		overflow: hidden;
+		z-index: 1040 !important;
+	}
+	/* make sure backdrop is above ui.page but below modal */
+	.modal-backdrop.fade.in {
+		opacity: 0.5 !important;
+		z-index: 1030 !important;
+	}
+	/* Let's Beautify Our Form */
+</style>
+<div class="header_top">
+	<div class="inner">
+		<div class="round_txt_box">
+			<div class="inner_inside">
+				S7
+			</div>
+		</div>
+		<div class="middle_txt">
+			<span><%= el.get('from') %>-<%= el.get('to') %></span>
+			<span>
+				<div class="small_arrow" style="left:20px;"><img class="action-pageback" src="img/round_arrow_lft.png" alt="" border="0" />
+				</div><%= el.getTimeDisplay() %>
+				<div class="small_arrow" style="right:20px;"><img class="action-pagefwd" src="img/round_arrow_rgt.png" alt="" border="0" />
+				</div> </span>
+		</div>
+		<div class="top_small_icon"><img src="img/header_top_img.png" alt="" border="0" />
+		</div>
+	</div>
+</div>
+<div class="splash_screen">
+	<div class="top_comment_box">
+		<div class="arrow_box pull-left">
+			<div class="arrow_icon_lft"></div>
+			Freie Pl&auml;tze
+		</div>
+		<div class="arrow_box pull-right">
+			<div class="arrow_icon_rgt"></div>
+			Den nehme ich
+		</div>
+	</div>
+	<div id="wrapper" style="top:145px; bottom:68px;">
+		<div id="scroller">
+			<div class="bar_radio_box">
+				<ul>
+					<% for(var s in sectors ) { %>
+					<li>
+						<div class="top_lft_white">
+
+							<span class="blue_box"><%= s %></span>
+						</div>
+						<div class="short_line">
+							<div class="slider_part">
+								<div class="progress_bar <%= view.getSectorColor(s) %>" style="width:<%= sectors[s] %>%;"></div>
+							</div>
+							<div class="radio_part">
+								<span class='custom-radio'>
+									<input type="radio" class="select-sector" data-id="<%= s %>">
+								</span>
+							</div>
+						</div>
+					</li>
+					<% }; %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+

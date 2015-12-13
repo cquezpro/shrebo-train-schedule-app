@@ -1,0 +1,44 @@
+<style>
+.station-list {
+	width: 100%;
+	font: normal 8vw/normal 'HelveticaNeueLTStd-Lt';
+	color: #fff;
+	text-align: center;
+	padding: 0 3%;
+	margin: 2% 0 12%;
+	clear: both;
+}
+</style>
+<div class="scrollable stats-scroller">
+	<div class="list_box">
+		<div class="blue_txt_box">
+			<div class="inner">
+				<h2>Station</h2>
+				<div id="dg-container" class="dg-container station-select">
+					<div class="dg-wrapper">
+						<% for(var s in stations) { %> <a href="#"
+							data-stopid='<%= stations[s] %>' class="active"><%=
+							stations[s] %></a> <% } %>
+					</div>
+					<nav>
+						<span class="dg-prev"><i class="fa fa-chevron-left"></i></span> <span
+							class="dg-next"><i class="fa fa-chevron-right"></i></span>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<h4>Belegungsubersicht</h4>
+		<h2 class="station-list">Bern - Zofingen - Luzern</h2>
+		<ul class="inner_txt_area">
+			<li><span class="small_txt">Zug 1.Klasse</span><span
+				class="big_txt">80</span></li>
+			<li><span class="small_txt">Zug 2.Klasse</span><span
+				class="big_txt">232</span></li>
+			<hr>
+			<li><span class="small_txt">Gesamtbelegung</span><span
+				class="big_txt">312</span></li>
+		</ul>
+		<h5>von 380 Plätzen gesamt</h5>
+	</div>
+</div>
+</div>

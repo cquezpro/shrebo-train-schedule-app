@@ -1,0 +1,125 @@
+.div-wrapper {
+	display: table;
+}
+.middle-align {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* source http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height */
+
+/* columns of same height styles */
+.container-xs-height {
+	display: table;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.row-xs-height {
+	display: table-row;
+}
+.col-xs-height {
+	display: table-cell;
+	float: none;
+}
+
+/* vertical alignment styles */
+.col-top {
+	vertical-align: top;
+}
+.col-middle {
+	vertical-align: middle;
+}
+.col-bottom {
+	vertical-align: bottom;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.footer {
+	text-align: center;
+}
+
+.spacer {
+    padding-top: 40px;
+}
+
+.logo {
+    height: 128px;
+    margin-top: -10px;
+}
+
+.flash {
+    border-color: gray;
+    border-style: solid;
+    border-width: 2px;
+}
+
+@media (min-width: 768px) {
+	.container-sm-height {
+		display: table;
+		padding-left: 0px;
+		;
+	}
+	.row-sm-height {
+		display: table-row;
+	}
+	.col-sm-height {
+		display: table-cell;
+		float: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.center, .center h2, .center form {
+		text-align: center;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+	.footer {
+	    padding-top: 40px;
+	}
+    .header h1, ul {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+	.container-md-height {
+		display: table;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.row-md-height {
+		display: table-row;
+	}
+	.col-md-height {
+		display: table-cell;
+		float: none;
+	}
+}
+@media (min-width: 1200px) {
+	.container-lg-height {
+		display: table;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.row-lg-height {
+		display: table-row;
+	}
+	.col-lg-height {
+		display: table-cell;
+		float: none;
+	}
+}
+

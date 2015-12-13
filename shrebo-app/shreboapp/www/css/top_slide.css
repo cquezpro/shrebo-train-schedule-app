@@ -1,0 +1,146 @@
+/* Font Face Styles */
+@font-face {
+	font-family: 'Roboto-Light';
+	src: url('../font-awesome/font/robotolight.eot');
+	src: url('../font-awesome/font/robotolight.eot?#iefix') format('embedded-opentype'),  
+	  	 url('../font-awesome/font/robotolight.woff') format('woff'),  
+	  	 url('../font-awesome/font/robotolight.ttf') format('truetype'),  
+	  	 url('../font-awesome/font/robotolight.svg#robotolight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeueLTStd-UltLtEx';
+	src: url('../font-awesome/font/helveticaneueltstdultltex.eot');
+	src: url('../font-awesome/font/helveticaneueltstdultltex.eot?#iefix') format('embedded-opentype'),
+		 url('../font-awesome/font/helveticaneueltstdultltex.woff') format('woff'),
+		 url('../font-awesome/font/helveticaneueltstdultltex.ttf') format('truetype'),
+		 url('../font-awesome/font/helveticaneueltstdultltex.svg#helveticaneueltstdultltex') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'KlavikaBold-Bold';
+	src: url('../font-awesome/font/klavikaboldbold.eot');
+	src: url('../font-awesome/font/klavikaboldbold.eot?#iefix') format('embedded-opentype'),
+		 url('../font-awesome/font/klavikaboldbold.woff') format('woff'),
+		 url('../font-awesome/font/klavikaboldbold.ttf') format('truetype'),
+		 url('../font-awesome/font/klavikaboldbold.svg#klavikaboldbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeueLTStd-Bd';
+	src: url('../font-awesome/font/helveticaneueltstdbd.eot');
+	src: url('../font-awesome/font/helveticaneueltstdbd.eot?#iefix') format('embedded-opentype'),
+		 url('../font-awesome/font/helveticaneueltstdbd.woff') format('woff'),
+		 url('../font-awesome/font/helveticaneueltstdbd.ttf') format('truetype'),
+		 url('../font-awesome/font/helveticaneueltstdbd.svg#helveticaneueltstdbd') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeueLTStd-Lt';
+	src: url('../font-awesome/font/helveticaneueltstdlt.eot');
+	src: url('../font-awesome/font/helveticaneueltstdlt.eot?#iefix') format('embedded-opentype'),
+		 url('../font-awesome/font/helveticaneueltstdlt.woff') format('woff'),
+		 url('../font-awesome/font/helveticaneueltstdlt.ttf') format('truetype'),
+		 url('../font-awesome/font/helveticaneueltstdlt.svg#helveticaneueltstdlt') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeueLTStd-Roman';
+	src: url('helveticaneueltstdroman.eot');
+	src: url('helveticaneueltstdroman.eot?#iefix') format('embedded-opentype'),
+			 url('helveticaneueltstdroman.woff') format('woff'),
+			 url('helveticaneueltstdroman.ttf') format('truetype'),
+			 url('helveticaneueltstdroman.svg#helveticaneueltstdroman') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeueLTStd-Th';
+	src: url('helveticaneueltstdth.eot');
+	src: url('helveticaneueltstdth.eot?#iefix') format('embedded-opentype'),
+			 url('helveticaneueltstdth.woff') format('woff'),
+			 url('helveticaneueltstdth.ttf') format('truetype'),
+			 url('helveticaneueltstdth.svg#helveticaneueltstdth') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.dg-container{
+	height: 40px;
+    left: 34%;
+    position: absolute;
+    top: 0;
+    width: 200px;
+    z-index: 999;
+}
+.dg-wrapper{
+	width: 50px;
+	height: 40px;
+	margin: 0 auto;
+	position: relative;
+	/*-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-perspective: 100px;
+	-moz-perspective: 100px;
+	-o-perspective: 100px;
+	-ms-perspective: 100px;
+	perspective: 100px;*/
+}
+.dg-wrapper a{
+	width: 50px;
+	height: 40px;
+	background:#6e83b4;
+	display: block;
+	font:normal 14px/37px 'HelveticaNeueLTStd-Lt';
+	color:#fff;
+	position: absolute;
+	text-align:center;
+	left: 0;
+	top: 0px;
+}
+.dg-wrapper a.dg-transition{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.dg-container nav{
+	bottom: 40px;
+    height: 40px;
+    left: 1%;
+    margin-left: 0;
+    position: relative;
+    width: 200px;
+    z-index: 1000;
+}
+.dg-container nav span{
+	bottom: -12px;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    height: 25px;
+    left: 0;
+    opacity: 1;
+    position: relative;
+    width: 24px;
+}
+.dg-container nav span:hover{
+	opacity: 1;
+}
+.dg-container nav span.dg-next{
+	background-position: right top;
+    bottom: 2px;
+    left: auto;
+    margin-left: 0;
+    position: absolute;
+    right: 0;
+}

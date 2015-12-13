@@ -1,0 +1,42 @@
+<div class="inner_body" style="margin-top:10px">
+	<!--<div class="inner_logo"><a href="#"><img src="img/logo.png" border="0" /></a></div>-->
+	<div id="wrapper">
+		<div id="scroller">
+			<div class="mid_section">
+				<div class="table_inner_box">
+					<div class="table_lft">
+						<% for(var h in availability) { %>
+						<ul>
+							<a href="#" class="select-hour">
+							<li class="hour h<%= h %>" data-hour="<%= h %>">
+								<%= h %>
+							</li> </a>
+							<% if(h <= 12) { %>
+							<a href="#" class="select-slot">
+							<li class="slot s<%= (h - 9) * 15 %>" data-slot="<%= (h - 9) * 15 %>">
+								<%= (h - 9) * 15 %>
+							</li></a>
+							<% } %>
+						</ul>
+						<% } %>
+					</div>
+					<div class="table_rgt">
+						<div class="img_profile_area">
+							<div class="box03_lft">
+								<img class="img-responsive" src="<%= el.get('picture_url') %>" alt="" border="0" />
+								<h2><%= el.get('label') %></h2>
+								<h3><%= el.get('location_pickup') %></h3>
+							</div>
+						</div>
+						<p>
+							<%= el.get('description').substring(0, 100) %>
+						</p>
+						<div id="book_btn" class="submit_btn">
+							<a href="#" data-toggle="modal" data-target="#myModal"><span>Buchen</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

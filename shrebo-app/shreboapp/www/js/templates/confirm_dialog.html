@@ -1,0 +1,15 @@
+<div class="alert" id="confirmdialog">
+	<div class="alert-content" style="margin-top: -85px;">
+		<h3><%= view.title %></h3>
+		<p><%= view.text %></p>
+		<div class="alert-buttons">
+			<% for(var i = 0; i < view.buttonLabels.length; i++) { %>
+			<a class='action-button' data-id="<%= i %>">
+			<div class="alert-button action-button left primary" data-id="<%= i %>">
+				<%= view.buttonLabels[i] %>
+			</div>
+			</a>
+			<% } %>
+		</div>
+	</div>
+</div>

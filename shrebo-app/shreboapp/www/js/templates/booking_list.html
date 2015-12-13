@@ -1,0 +1,72 @@
+<div id="infobox" style="display:none;background:white;z-index:5;">
+	<div class="row">
+		<div class="col-xs-12" style="top:10px">
+			<div class="pull-right">
+				<a href="#" class="btn action-infobox-close">X</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-4">
+					<img id="info-img" class="img-responsive" src="img/img_modal.png" border="0" alt="" />
+				</div>
+				<div class="col-xs-4">
+					<div class="txt_small">
+						<h2 id="info-name">name</h2>
+						<h3 id="info-place">place</h3>
+					</div>
+				</div>
+				<div class="col-xs-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<p id="info-text" class="banner_txt"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="inner_body for_scroll">
+	<!--<div class="inner_logo"><a href="#"><img src="img/logo.png" border="0" /></a></div>-->
+	<div id="wrapper" style="left:0; right:0; padding:0;">
+		<div id="scroller" style="position:relative">
+			<ul class="edit_list">
+				<% if(col.length == 0) {  %>
+				<div style="margin-top:100px">
+					<div class="submit_btn">
+						<a href="#shareables" class="action-select"><span class="action-select">Angebote</span></a>
+					</div>
+				</div>
+				<% } %>
+				<% col.each(function (el) { %>
+				<li data-id="<%= el.cid %>">
+					<div class="row">
+						<div class="col-xs-2 box01_lft">
+							<a href="#" class="action-cancel"><img class="img-responsive" src="img/substract.png" alt="" border="0" /></a>
+						</div>
+						<div class="col-xs-2 box02_lft">
+							<h2><%= view.formatTime(el) %></h2>
+							<h2><%= el.shareable.get('location_pickup') %></h2>
+						</div>
+						<div class="col-xs-4 box03_lft">
+							<a href="#" class="action-select"><img class="img-responsive" src="<%= el.shareable.get('picture_url') %>" alt="" border="0" /></a>
+
+						</div>
+						<div class="col-xs-4 box03_lft">
+							<h2><%= el.shareable.get('label') %></h2>
+							<h3><%= el.shareable.get('location_pickup') %></h3>
+							<!--
+
+							<h4>Erinnerung</h4>
+							<input name="A" type="radio" value="" class="styled" />
+							-->
+						</div>
+					</div>
+				</li>
+				<% }); %>
+			</ul>
+		</div>
+	</div>
+</div>

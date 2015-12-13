@@ -1,0 +1,97 @@
+<!-- full template -->
+<div class="list_box">
+	<div class="blue_txt_box">
+		<div class="inner">
+			<h2>Station</h2>
+			<div id="dg-container" class="dg-container station-select">
+				<div class="dg-wrapper">
+					<% stops.each(function(s, i) { %> <a href="#"
+						data-stopid="<%= s.cid %>" class="active"><%=
+						s.get('itinerary_code') %></a> <% }); %>
+				</div>
+				<nav>
+					<span class="dg-prev"><i class="fa fa-chevron-left"></i></span> <span
+						class="dg-next"><i class="fa fa-chevron-right"></i></span>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="scrollable staff-vote-scroller">
+	<ul class="arrow_list">
+		<% polls.each(function(el, i) { %>
+		<li class='quickpoll' data-pollid="<%= el.cid %>">
+			<div class="vote-radiobox" data-group="servicekey"
+				data-option='<%= service_key %>' style="display: none"></div>
+			<div class="inner_main">
+				<h2>
+					Pos.-Nr. <%=sections[i].code %>
+					<div class="icon_cross action-select-active" data-group="posactive"
+						data-option="<%=i+1 %>">
+						<i class="is-active fa fa-times-circle-o"></i> <i
+							class="is-inactive fa fa-check-circle" style="display: none"></i>
+					</div>
+				</h2>
+				<!-- per-position inline, see renderInline -->
+				<div class="vote-inline"></div>
+				<span id="on_click" class="white_arrow  action-drop-down"><i
+					class="fa fa-chevron-down"></i></span>
+				<div class="triangle-bottomleft"></div>
+			</div>
+			<div class="down_box" style="display: none;">
+				<div class="top_heading_box">
+					<h2>Klasse</h2>
+					<ul class="vote-radiobox" data-group="paxclass">
+						<li class='vote-option' data-option='1'><a
+							href="javascript:void(0)" class='action-select-option'>1.</a></li>
+						<li class='vote-option' data-option='2'><a
+							href="javascript:void(0)" class='action-select-option'>2.</a></li>
+					</ul>
+				</div>
+				<div class="inner_parameter">
+					<div class="all_list vote-radiobox" data-group='paxload'>
+						<ul class="parameter_list green_box vote-option" data-option='low'>
+							<li></li>
+							<li><span class="progress_bar"></span></li>
+							<li></li>
+							<li><div class="round_circle action-select-option">
+									<span><%= view.getVoteLabel('low') %></span>
+								</div></li>
+						</ul>
+						<ul class="parameter_list yellow_box vote-option"
+							data-option='medium'>
+							<li></li>
+							<li><span class="progress_bar"></span></li>
+							<li></li>
+							<li><div class="round_circle action-select-option">
+									<span><%= view.getVoteLabel('medium') %></span>
+								</div></li>
+						</ul>
+						<ul class="parameter_list orange_box vote-option"
+							data-option='high'>
+							<li></li>
+							<li><span class="progress_bar"></span></li>
+							<li></li>
+							<li><div class="round_circle action-select-option">
+									<span><%= view.getVoteLabel('high') %></span>
+								</div></li>
+						</ul>
+						<ul class="parameter_list red_box vote-option"
+							data-option='overload'>
+							<li></li>
+							<li><span class="progress_bar"></span></li>
+							<li></li>
+							<li><div class="round_circle action-select-option">
+									<span><%= view.getVoteLabel('overload') %></span>
+								</div></li>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<a href="javascript:void(0)" class="top_btn_link action-close">Schliessen</a>
+				</div>
+			</div>
+		</li> <% }); %>
+		<li><div class="scroll-filler" style="height: 120px"></div></li>
+	</ul>
+</div>

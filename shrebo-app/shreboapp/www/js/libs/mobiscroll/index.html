@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <title>Mobiscroll</title>
+
+    <!-- jQuery Include -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    
+    <link href="css/mobiscroll.custom-2.13.1.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/mobiscroll.custom-2.13.1.min.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        /* Demo Page styling, you can disregard this in your implementation */
+        body { padding: 0; margin: 0; font-size: 16px; font-family: arial, verdana, sans-serif; }
+        input, select { width: 100%; padding: .625em; margin: 0 0 .625em 0; border: 1px solid #aaa; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+        .header { padding: .625em; background: #5185a8;}
+        .header h1 { margin: 0; padding: 0; color: #fff; text-align: center; font-size: 1.25em; font-weight: bold; text-shadow: 1px 1px 1px #000; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+        .content { padding: 1em; }
+
+        /* Image and text demo styling*/
+        .mbsc-img { text-align: left; }
+        .mbsc-img img { height: 28px; }
+        .mbsc-img-txt { display: inline-block; margin: 0 10px; vertical-align: middle; }
+        .mbsc-img-cont { width: 80px; height: 28px; margin-top: -2px; display: inline-block; text-align: center; vertical-align: middle; line-height: normal; }
+
+        /* Listview demo styling */
+        .mbsc-lv-cont { margin: 1em -1em; }
+    </style>
+
+    <script>
+        $(function () {
+
+            function init() {
+                
+                // Select demo initialization
+                $('#demo_select').mobiscroll().select({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang        // Specify language like: lang: 'pl' or omit setting to use default 
+                });
+                
+                // Date demo initialization
+                $('#demo_date').mobiscroll().date({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang        // Specify language like: lang: 'pl' or omit setting to use default 
+                });
+                
+                // Datetime demo initialization
+                $('#demo_datetime').mobiscroll().datetime({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    minDate: new Date(2012,3,10,9,22),  // More info about minDate: http://docs.mobiscroll.com/2-13-1/datetime#!opt-minDate
+                    maxDate: new Date(2014,7,30,15,44),   // More info about maxDate: http://docs.mobiscroll.com/2-13-1/datetime#!opt-maxDate
+                    stepMinute: 5  // More info about stepMinute: http://docs.mobiscroll.com/2-13-1/datetime#!opt-stepMinute
+                });
+                
+                // Time demo initialization
+                $('#demo_time').mobiscroll().time({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang        // Specify language like: lang: 'pl' or omit setting to use default 
+                });
+                
+                // Image demo initialization
+                $('#demo_image').mobiscroll().image({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    labels: ['Cars']  // More info about labels: http://docs.mobiscroll.com/2-13-1/imageandtext#!opt-labels
+                });
+                
+                // Treelist demo initialization
+                $('#demo_treelist').mobiscroll().treelist({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    labels: ['Region', 'Country', 'City']  // More info about labels: http://docs.mobiscroll.com/2-13-1/list#!opt-labels
+                });
+                
+                // Calendar demo initialization
+                $('#demo_calendar').mobiscroll().calendar({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang        // Specify language like: lang: 'pl' or omit setting to use default 
+                });
+                
+                // Calandar Date demo initialization
+                $('#demo_calendar_date').mobiscroll().calendar({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    controls: ['calendar', 'date']  // More info about controls: http://docs.mobiscroll.com/2-13-1/calendar#!opt-controls
+                });
+                
+                // Calendar Datetime demo initialization
+                $('#demo_calendar_datetime').mobiscroll().calendar({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    controls: ['calendar', 'date', 'time']  // More info about controls: http://docs.mobiscroll.com/2-13-1/calendar#!opt-controls
+                });
+                
+                // Calendar Only demo initialization
+                $('#demo_calendar_only').mobiscroll().calendar({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    controls: ['calendar']  // More info about controls: http://docs.mobiscroll.com/2-13-1/calendar#!opt-controls
+                });
+                
+                // Date Range demo initialization
+                $('#demo_rangepicker').mobiscroll().rangepicker({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang        // Specify language like: lang: 'pl' or omit setting to use default 
+                });
+                
+                // Time Range demo initialization
+                $('#demo_rangepicker_time').mobiscroll().rangepicker({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    controls: ['time']  // More info about controls: http://docs.mobiscroll.com/2-13-1/rangepicker#!opt-controls
+                });
+                
+                // Date & Time Range demo initialization
+                $('#demo_rangepicker_datetime').mobiscroll().rangepicker({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    controls: ['date', 'time']  // More info about controls: http://docs.mobiscroll.com/2-13-1/rangepicker#!opt-controls
+                });
+                
+                // Listview demo initialization
+                $('#demo_listview').mobiscroll().listview({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    stages: [   // More info about stages: http://docs.mobiscroll.com/2-13-1/listview#!opt-stages
+                        { 
+                            percent: -20, 
+                            color: 'red', 
+                            icon: 'remove', 
+                            action: function (li, inst) { inst.remove(li); return false; } 
+                        }, 
+                        { 
+                            percent: 20, 
+                            color: 'green', 
+                            icon: 'checkmark', 
+                            action: function (li) { li.css('text-decoration', 'line-through'); } 
+                        } 
+                    ]
+                });
+                
+            }    
+
+            // -------------------------------------------------------------------
+            // Demo page code START, you can disregard this in your implementation
+            var demo, theme, mode, display, lang;
+            
+            $('.settings').on('change', function() {
+                demo = $('#demo').val();
+                theme = $('#theme').val() || $.mobiscroll.defaults.theme,
+                mode = $('#mode').val(),
+                display = $('#display').val(),
+                lang = $('#language').val();
+
+                $('.demo-cont').hide();
+                $("#demo_cont_" + demo).show();
+                
+                init();
+            });
+
+            $('#demo').trigger('change');
+            // Demo page code END
+            // -------------------------------------------------------------------
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Mobiscroll</h1>
+    </div>
+
+    <div class="content">
+        <!-- Demo configurator markup START, disregard this in your implementation -->
+        <div>
+            <label for="theme">Theme</label>
+            <select name="theme" id="theme" class="settings">
+                <option value="">Default / Auto</option>
+                <option value="ios7">iOS7</option>
+                <option value="ios">iOS</option>
+            </select>
+        </div>
+        <div>
+            <label for="mode">Mode</label>
+            <select name="mode" id="mode" class="settings">
+                <option value="scroller">Scroller</option>
+                <option value="clickpick">Clickpick</option>
+                <option value="mixed">Mixed</option>
+            </select>
+        </div>
+        <div>
+            <label for="display">Display</label>
+            <select name="display" id="display" class="settings">
+                <option value="modal">Modal</option>
+                <option value="inline">Inline</option>
+                <option value="bubble">Bubble</option>
+                <option value="top">Top</option>
+                <option value="bottom">Bottom</option>
+            </select>
+        </div>
+        <div>
+            <label for="language">Language</label>
+            <select name="language" id="language" class="settings">
+                <option value="">English</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+            </select>
+        </div>
+        <!-- Demo selector markup, disregard this in your implementation -->
+        <div>
+            <label for="demo">Demo</label>
+            <select name="demo" id="demo" class="settings">
+                <option value="select" selected>Select</option>
+                <option value="date" >Date</option>
+                <option value="datetime" >Datetime</option>
+                <option value="time" >Time</option>
+                <option value="image" >Image</option>
+                <option value="treelist" >Treelist</option>
+                <option value="calendar" >Calendar</option>
+                <option value="calendar_date" >Calandar Date</option>
+                <option value="calendar_datetime" >Calendar Datetime</option>
+                <option value="calendar_only" >Calendar Only</option>
+                <option value="rangepicker" >Date Range</option>
+                <option value="rangepicker_time" >Time Range</option>
+                <option value="rangepicker_datetime" >Date & Time Range</option>
+                <option value="listview" >Listview</option>
+            </select>
+        </div>
+        <!-- Demo configurator markup END -->
+
+    
+        <!-- Select demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_select">
+            <label for="demo_select">Try Select</label>
+            <select name="Cities" id="demo_select" data-role="none">
+                <option value="">Please Select</option>
+                <option value="1">Atlanta</option>
+                <option value="2">Berlin</option>
+                <option value="3">Boston</option>
+                <option value="4">Chicago</option>
+                <option value="5">London</option>
+                <option value="6">Los Angeles</option>
+                <option value="7">New York</option>
+                <option value="8">Paris</option>
+                <option value="9">San Francisco</option>
+            </select>   
+        </div>
+    
+        <!-- Date demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_date">
+            <label for="demo_date">Try Date</label>
+            <input type="text" id="demo_date" />  
+        </div>
+    
+        <!-- Datetime demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_datetime">
+            <label for="demo_datetime">Try Datetime</label>
+            <input type="text" id="demo_datetime" />  
+        </div>
+    
+        <!-- Time demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_time">
+            <label for="demo_time">Try Time</label>
+            <input type="text" id="demo_time" />  
+        </div>
+    
+        <!-- Image demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_image">
+            <label for="demo_image_dummy">Try Image</label>
+            <ul id="demo_image" >
+                <li data-val="BMW"><div class="mbsc-img-w"><div class="mbsc-img-c"><img class="mbsc-img" src="http://demo.mobiscroll.com/Content/img/BMW_logo.png"></div><span class="mbsc-img-txt">BMW</span></div></li>
+                <li data-val="Dacia"><div class="mbsc-img-w"><div class="mbsc-img-c"><img class="mbsc-img" src="http://demo.mobiscroll.com/Content/img/Dacia_logo.png"></div><span class="mbsc-img-txt">Dacia</span></div></li>
+                <li data-val="Ferrari"><div class="mbsc-img-w"><div class="mbsc-img-c"><img class="mbsc-img" src="http://demo.mobiscroll.com/Content/img/Ferrari_logo.png"></div><span class="mbsc-img-txt">Ferrari</span></div></li>
+                <li data-val="Mercedes"><div class="mbsc-img-w"><div class="mbsc-img-c"><img class="mbsc-img" src="http://demo.mobiscroll.com/Content/img/Mercedes_logo.png"></div><span class="mbsc-img-txt">Mercedes</span></div></li>
+            </ul>   
+        </div>
+    
+        <!-- Treelist demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_treelist">
+            <label for="demo_treelist_dummy">Try Treelist</label>
+            <ul id="demo_treelist">
+                <li>America
+                    <ul>
+                        <li>USA
+                            <ul>
+                                <li>Washington</li>
+                                <li>Florida</li>
+                                <li>Los Angeles</li>
+                                <li>San Francisco</li>
+                            </ul>
+                        </li>
+                        <li>Canada
+                            <ul>
+                                <li>Vancouver</li>
+                                <li>Winnipeg</li>
+                                <li>Calgary</li>
+                            </ul>
+                        </li>
+                        <li>Brazil
+                            <ul>
+                                <li>Rio de Janeiro</li>
+                                <li>Sao Paolo</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Europe
+                    <ul>
+                        <li>France
+                            <ul>
+                                <li>Paris</li>
+                                <li>Toulouse</li>
+                                <li>Marseille</li>
+                                <li>Lyon</li>
+                            </ul>
+                        </li>
+                        <li>Germany
+                            <ul>
+                                <li>Berlin</li>
+                                <li>Frankfurt</li>
+                                <li>Hamburg</li>
+                            </ul>
+                        </li>
+                        <li>Spain
+                            <ul>
+                                <li>Madrid</li>
+                                <li>Barcelona</li>
+                                <li>Saragosa</li>
+                            </ul>
+                        </li>
+                        <li>Italy
+                            <ul>
+                                <li>Rome</li>
+                                <li>Palermo</li>
+                                <li>Genoa</li>
+                                <li>Torino</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Asia
+                    <ul>
+                        <li>China
+                            <ul>
+                                <li>Shanghai</li>
+                                <li>Hong Kong</li>
+                                <li>Beijing</li>
+                            </ul>
+                        </li>
+                        <li>Japan
+                            <ul>
+                                <li>Tokyo</li>
+                                <li>Kagoshima</li>
+                                <li>Osaka</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>   
+        </div>
+    
+        <!-- Calendar demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_calendar">
+            <label for="demo_calendar">Try Calendar</label>
+            <input type="text" id="demo_calendar" />  
+        </div>
+    
+        <!-- Calandar Date demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_calendar_date">
+            <label for="demo_calendar_date">Try Calandar Date</label>
+            <input type="text" id="demo_calendar_date" />  
+        </div>
+    
+        <!-- Calendar Datetime demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_calendar_datetime">
+            <label for="demo_calendar_datetime">Try Calendar Datetime</label>
+            <input type="text" id="demo_calendar_datetime" />  
+        </div>
+    
+        <!-- Calendar Only demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_calendar_only">
+            <label for="demo_calendar_only">Try Calendar Only</label>
+            <input type="text" id="demo_calendar_only" />  
+        </div>
+    
+        <!-- Date Range demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_rangepicker">
+            <label for="demo_rangepicker">Try Date Range</label>
+            <input type="text" id="demo_rangepicker" />  
+        </div>
+    
+        <!-- Time Range demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_rangepicker_time">
+            <label for="demo_rangepicker_time">Try Time Range</label>
+            <input type="text" id="demo_rangepicker_time" />  
+        </div>
+    
+        <!-- Date & Time Range demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_rangepicker_datetime">
+            <label for="demo_rangepicker_datetime">Try Date & Time Range</label>
+            <input type="text" id="demo_rangepicker_datetime" />  
+        </div>
+    
+        <!-- Listview demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_listview">
+            <h2>To do list</h2><p>Swipe left or right </p>
+            <ul id="demo_listview" class="listview">
+                <li>Take out the trash</li>
+                <li>Buy flowers</li>
+                <li>Implement listview component</li>
+            </ul>   
+        </div>
+    
+    </div>
+</body>
+</html>

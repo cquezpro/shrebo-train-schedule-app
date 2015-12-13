@@ -1,0 +1,36 @@
+date_added,deviceid,user1990-01-01,6e7b4619b29bce5da1d79d2d6484acb8518945c4,johannes.staehli@sbb.ch iPhone 6
+1990-01-01,f0fd818f08f381d4f314db55d1f41589133aa1c5,olivier.oc.cornet@sbb.ch iPhone 6
+1990-01-01,edf7c5234ab04e7b0dd065b553baec9bbc2cbd0c,Patrick's iPod touch
+1990-01-01,4787a46d1722072b77a2bacb5d1e8db6df5bf2ff,pascal.albert@sbb.ch iPhone 5
+1990-01-01,bce43f2fef5ef634bf4299e9c935209fde1a74bc,ps-MG
+1990-01-01,d8ed017b1bb6b8e13b7458028d6ee969f7a711c1,ps-MLK
+1990-01-01,074e088561565a74d0036bdd511482659c27fdd0,iPhone Patrick Senti
+1990-01-01,ddf278af49f20fb31c50650014c1c5a6274d8206,Thomas.marti2@sbb.ch iPhone 5s
+1990-01-01,864721bdfa9b234c16294153e930482c30678bed,ps-NM
+1990-01-01,afb0ecd74fcca539ea71f3cae0bce57d715514ae,ps-ASSK
+1990-01-01,bdc435101d38724258dbb84be9453673d606d03e,iPodTouch_PatrickSenti
+1990-01-01,0fa08e7042639a2d250e7cd1a5d51f452f2482d3,m.betschart@sbb.ch iPhone 5s
+1990-01-01,c6b2544924dbe72b61063e3f67ed52622c3bd4f2,thomas.naegelin@sbb.ch iPhone 5s
+1990-01-01,1b9c98ccc7560ed7f088bb7e8463765586b649fd,Achim Steinroeder (iphone 6)
+1990-01-01,ec9b872f4a92b76c69b89267f2481d3c12fff222,elias.kronig@sbb.ch iPhone 6
+1990-01-01,c3b9fba394bae45f5bb4ac9b1f98269608a81cf7,maya.sidler@gmail.com iPhone 5
+1990-01-01,8b3b1afd061dedd558aec6a029196eb207e5e4fd,franco.ehrat@sbb.ch iPhone 6
+1990-01-01,e05ace006b1c351be71741e9a61a9d9f6530a646,jeannine.pilloud@sbb.ch iPhone 6 Plus
+2015-05-07,4d12e3f556eb2720d5296592bda8737b6609e2be,fabrizio.anner@sbb.ch iPhone 6
+2015-05-07,e50cb6ca042ac6f3c4864142709ee552c8f0fead,ralf.stettler@sbb.ch iPhone 6 Plus
+2015-05-07,594090a52e1fc8498ff2a490eb025f266ee71569,annina.gartmann@gmail.com iPhone 4S
+2015-05-07,42bda9019e2b6e4c638a91ba8f5f991b8d1d081a,Christof.lehmann@sbb.ch iPhone 6 Plus
+2015-05-07,819fbcf9c38413175650e6d3f8db81d2ea711b1a,Franz.a.neuhaus@sbb.ch iPhone 5
+2015-05-07,a8959c83bb9503abe015ce6ab686c63f640bbe7f,markus.kalt@sbb.ch iPhone 4
+2015-05-07,c558dd71881c1dc86f631e8ad442c771ed628bf9,Hansjuerg.saner@sbb.ch iPhone 6
+2015-05-31,20557ee9e4134d7befa2144624fa79bddae80937,luk@gmx.ch iPhone 4S,cleverpendeln customer ADHOC prov
+2015-05-31,a432ee1ff878e7ed238c66f5866481ac577108ef,d_studer@yahoo.de iPhone 6,cleverpendeln customer ADHOC prov
+2015-05-31,17dc81a370e124b35ed7b5a78e38ab6b655a4ee0,haneloerli@bluemail.ch iPhone 5,cleverpendeln customer ADHOC prov
+2015-05-31,c5ed8b44558b2d7ca1b11bbc00916ae40fed68e8,ariane.hallwachs@bluewin.ch iPhone 6,cleverpendeln customer ADHOC prov
+2015-05-31,40d13f1b6857b58b1d2ec3a2820e4e114966a8e5,sidlermarc@bluewin.ch iPhone 5s,cleverpendeln customer ADHOC prov
+2015-06-01,26761e965dbce33d04230fd4d2b4129e13e48546,markus.fick@bluewin.ch iPhone 6,cleverpendeln customer ADHOC prov
+2015-06-01,5e30c97809b783e619533e63cbba71eb3cf1d53c,tekla_hahin@yahoo.de iPad Air 2,cleverpendeln customer ADHOC prov
+2015-06-01,ddcea981d225038a6cd328f070fdb2ad6006781f,irene.hofmann@fantasymail.de iPhone 4,cleverpendeln customer ADHOC prov
+2015-06-01,42c5e8f851d02ea7cda50434c944730a1ac0b97a,natalie.stocker@bluewin.ch iPhone 6,cleverpendeln customer ADHOC prov
+2015-06-01,511cf25fcff7ea33e9928b73f11d55aba9788e15,m.bonato@hispeed.ch iPhone 5s,cleverpendeln customer ADHOC prov
+2015-06-01,f0bd4c0b1f3f138ec31693b74bb442f7093f424c,luisa707@bluewin.ch iPhone 5s,cleverpendeln customer ADHOC prov

@@ -1,0 +1,5 @@
+# these files are generated/replaced by set:customer and set:staff from their variants/... counterparts
+# which is why we don't want them in the repository
+www/css/bootstrap.css
+www/img/body_rep.jpg
+www/res

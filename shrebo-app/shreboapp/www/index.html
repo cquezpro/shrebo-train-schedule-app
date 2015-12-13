@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport"
+		content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+		<!-- web app -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+		<!-- https://github.com/apache/cordova-plugin-whitelist -->
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+		<link rel="apple-touch-icon" href="icon.png">
+		<link rel="shortcut icon" href="icon.ico" />
+		<!-- icons -->
+		<link rel="icon" href="icon.png" />
+
+		<!-- jQueryMobile CSS library -->
+		<link rel="stylesheet" type="text/css"
+		href="css/bootstrap/css/bootstrap.css" />
+
+		<!-- this @#!?& causes disruptions with everything else so we exclude it
+		for now PS 14Mar2015
+		<link rel="stylesheet" type="text/css"
+		href="css/jquerymobile/jquery.mobile-1.4.2.css" />
+		<link rel="stylesheet" type="text/css"
+		href="css/jquerymobile/jquery.mobile-1.4.2.css" />
+		-->
+		<link type="text/css" rel="stylesheet"
+		href="js/libs/mobiscroll/css/mobiscroll.custom-2.13.1.min.css" />
+		<!-- CSSflow clarfity ui kit -->
+		<link rel="stylesheet" href="css/clarity/css/main.css" />
+		<link rel="stylesheet" href="css/jqm-clarity-compat.css" />
+
+		<!-- shrebo css -->
+		<link rel="stylesheet" href="css/modern-business-common.css" />
+		<link rel="stylesheet" href="css/modern-business-variant.css" />
+		<link rel="stylesheet" href="css/top_slide.css" />
+		<link rel="stylesheet" href="css/shrebo-common.css" />
+		<link rel="stylesheet" href="css/shrebo-variant.css" />
+		
+		<!-- other stuff -->
+		<link rel="stylesheet" href="css/autocomplete.css" />
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/faanimated.css" />
+        
+		<style>
+            .page {
+                display: none;
+            }
+
+            .shareable-img {
+                width: 180px;
+                height: 120px;
+                width: 180px;
+                height: 120px;
+                padding-left: 12px;
+                display: block;
+                margin: auto;
+            }
+
+            .app {
+
+            }
+
+            .button-gray {
+                color: gray !important;
+                box-shadow: inset 0 0 0 1px gray;
+            }
+
+            .button-green {
+                color: white !important;
+            }
+            /*
+             * jqm cssflow clarity compatibility
+             */
+            .button {
+                font-weight: 100 !important;
+            }
+
+            .list-link, .top-bar-link {
+                color: rgb(32, 135, 252) !important;
+                font-weight: 100 !important;
+            }
+
+            .list-message-img-square img {
+                max-width: 250px;
+                max-height: 165px;
+            }
+
+            .top-bar {
+                position: fixed;
+            }
+            /* slideable menu panel */
+            /* see util.panel for details */
+            .menu-panel {
+                display: none;
+                height: 100%;
+                width: 40%;
+                float: left;
+                position: fixed;
+                top: 40px;
+                left: 0px;
+                background: white;
+                z-index: 1;
+                border-right-style: solid;
+                border-width: 1px;
+                border-right-color: #C5C5C5;
+                opacity: 1.0;
+                overflow: hidden;
+            }
+            /* remove bootstrap text decoration to avoid
+             * underlining of links
+             */
+            a:active, a:hover, a:visited, a:focus {
+                text-decoration: none;
+            }
+            
+            .list-link {
+                color: black !important;
+            }
+            /* change background color to white for splash */
+            #xwrapper {
+                background: white;
+            }
+
+            /* this was here to fix jquery mobile's padding. replaced by .content */
+            /*
+             .ui-content {
+             padding: 0;
+             }
+             */
+            /* remove the border around .content, introduced by jquery mobile */
+            .content {
+                padding: 0px;
+                /*padding-top: 60px; */
+            }
+		</style>
+	</head>
+	<body>
+		<!-- menu -->
+		<div class="menu-panel" id="menu">
+			<ul class="list">
+				<li class="list-row">
+					<a href="#shareables" class="list-link">Angebote</a>
+				</li>
+				<li class="list-row">
+					<a href="#search" class="list-link">Suche</a>
+				</li>
+				<li class="list-row">
+					<a href="#scan" class="list-link">QR
+					Code</a>
+				</li>
+				<li class="list-row">
+					<a href="#bookings" class="list-link">Buchungen</a>
+				</li>
+				<li class="list-row">
+					<a href="#settings" class="list-link">Einstellungen</a>
+				</li>
+				<li class="list-row">
+					<a href="#logout" class="list-link">Logout</a>
+				</li>
+			</ul>
+		</div>
+		<!-- register page -->
+		<div id="signup" class="app" data-role="page">
+			<div class="content" data-role="content"></div>
+		</div>
+		<!-- page for all other views -->
+		<div id="page" class="app" data-role="page">
+			<div class="header" data-role="header" data-position="fixed">
+				<div id="top_menu">
+					<!--  menu will be rendered here -->
+				</div>
+			</div>
+			<div class="content inner_page_box" data-role="content">
+				<!-- content will be rendered here -->
+			</div>
+		</div>
+		<!-- Modal points -->
+		<div class="modal fade" id="pointsmodal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>-->
+					<div class="modal-body">
+						<div class="span_txt02">
+							50
+						</div>
+						<div class="span_txt03">
+							zusätzliche Punkte gewonnen!
+						</div>
+						<ul class="btn_list">
+							<li>
+								<input type="button" value="Punkte Einlösen"
+								class="btn_all" />
+							</li>
+							<li>
+								<input type="button" value="Später" class="btn_all" />
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- empty element to render subviews by util.create -->
+		<div id="subview">
+			<div class="content"></div>
+		</div>
+		<!-- Modal dialogs -->
+		<div id="modal-dialog"></div>
+		<!-- Modal feedback -->
+		<div class="modal fade" id="feedbackmodal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>-->
+					<div class="modal-body">
+						<div class="span_txt01">
+							Hilf Freunden Punkte zu gewinnen!
+							<br>
+							Freien Platz gefunden?
+						</div>
+						<ul class="vote_icon">
+							<li>
+								<a href="#"><img src="img/icon01.png" alt=""
+								border="0" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="img/icon02.png" alt=""
+								border="0" /></a>
+							</li>
+						</ul>
+						<input type="button" value="Anderen Zug genommen" class="btn_all" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- app end -->
+		<!-- Modal Seats -->
+		<div class="modal fade" id="seatsmodal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>-->
+					<div class="modal-body">
+						<div class="span_txt01">
+							Hilf Freunden Punkte zu gewinnen!
+							<br>
+							Freien Platz gefunden?
+						</div>
+						<ul class="vote_icon">
+							<li>
+								<a href="#"><img src="img/icon01.png" alt=""
+								border="0" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="img/icon02.png" alt=""
+								border="0" /></a>
+							</li>
+						</ul>
+						<input type="button" value="Anderen Zug genommen" class="btn_all" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- app end -->
+		<script type="text/javascript">
+            /**
+             * hack for local notification plugin, which fires too early for out notification handler
+             * see models/notify/NotificationHandler.deliverMessages()
+             */
+            document.addEventListener('deviceready', function() {
+                console.log('registering startup click handler for local notifications');
+                window._startupNotifications = [];
+                cordova.plugins.notification.local.on('click', function(notification) {
+                    console.log('received startup click notification' + notification.text);
+                    if (window._startupNotifications) {
+                        console.log('queuing startup notification');
+                        window._startupNotifications.push(notification);
+                    }
+                });
+            }, false);
+		</script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script data-main="js/main" type="text/javascript"
+		src="js/libs/require.js"></script>
+	</body>
+</html>

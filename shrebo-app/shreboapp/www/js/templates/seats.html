@@ -1,0 +1,47 @@
+<div class="big_heading_box">
+	<div class="inner">
+		<div class="inside_arrow_box">
+			<a href="javascript:void(0)" class="blue_arrow"><i class="fa fa-arrow-circle-left action-cancel"></i></a>
+		</div>
+		<div class="inside_txt_box">
+			<h3><%= view.getJourneyDisplay() %> </h3>
+			<span> <a href="#" class="inner_arw_lft"><i
+					class="fa fa-arrow-circle-o-left"></i></a> <%= view.getDateTimeDisplay() %> <a href="#"
+				class="inner_arw_rgt"><i class="fa fa-arrow-circle-o-right"></i></a>
+			</span>
+		</div>
+	</div>
+</div>
+<div class="for_search_area scrollable" id="seat-select-scroller">
+	<ul>
+		<div class="body_white" style="margin: 170px auto 0;">
+			<div class="main_arrow_box">
+				<div class="arrow_box pull-left">
+					<span></span>Freie Plätze
+				</div>
+				<div class="arrow_box pull-right">
+					<span></span>Den nehme ich
+				</div>
+			</div>
+			<ul class="progress_list">
+				<% _.each(avail, function(s) { %>
+				<li class='section' data-code="<%=s.code%>">
+					<div class="progress_lft">
+						<div class="color_progress <%=view.getRangeColor(s)%>">
+							<span style="width: <%=s.pct%>%"><span class="blue_box"><%=s.label%></span>
+								<i class="fa fa-male"></i></span>
+						</div>
+					</div>
+					<div class="radio_rgt action-select">
+						<input type="radio" name="ex2_a" id="ex2_a" />
+					</div>
+				</li> <% }); %>
+				<li>
+					<div class="scroll-filler"></div>
+				</li>
+			</ul>
+
+			<div class="inner"></div>
+		</div>
+	</ul>
+</div>

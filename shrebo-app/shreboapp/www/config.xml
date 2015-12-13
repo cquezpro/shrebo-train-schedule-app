@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="ch.cleverpendeln.customer" version="0.1.0.021">
+	<name>
+cleverpendeln
+	</name>
+	<description>
+		cleverpendeln powered by shrebo
+	</description>
+	<author email="info@shrebo.ch" href="http://www.cleverpendeln.ch">
+		shrebo, cleverpendeln
+	</author>
+	<feature name="http://api.phonegap.com/1.0/device" />
+	<preference name="permissions" value="none" />
+	<preference name="orientation" value="portrait" />
+	<preference name="target-device" value="universal" />
+	<preference name="fullscreen" value="true" />
+	<preference name="webviewbounce" value="true" />
+	<preference name="prerendered-icon" value="true" />
+	<preference name="stay-in-webview" value="false" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<preference name="detect-data-types" value="true" />
+	<preference name="exit-on-suspend" value="false" />
+	<preference name="show-splash-screen-spinner" value="true" />
+	<preference name="auto-hide-splash-screen" value="true" />
+	<preference name="disable-cursor" value="false" />
+	<preference name="android-minSdkVersion" value="14" />
+	<preference name="android-targetSdkVersion" value="15" />
+	<preference name="android-installLocation" value="auto" />
+	<preference name="StatusBarOverlaysWebView" value="false" />
+	<preference name="android-windowSoftInputMode" value="adjustResize" />
+	<icon src="icon.png" />
+	<platform name="android">
+		<icon density="ldpi" src="res/icon/android/icon-36-ldpi.png" />
+		<icon density="mdpi" src="res/icon/android/icon-48-mdpi.png" />
+		<icon density="hdpi" src="res/icon/android/icon-72-hdpi.png" />
+		<icon density="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
+	</platform>
+	<platform name="ios">
+
+		<icon height="60" src="res/icon/ios/icon-60.png" width="60" />
+		<icon height="120" src="res/icon/ios/icon-60@2x.png" width="120" />
+		<icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
+		<icon height="76" src="res/icon/ios/icon-76.png" width="76" />
+		<icon height="152" src="res/icon/ios/icon-76@2x.png" width="152" />
+		<icon height="40" src="res/icon/ios/icon-40.png" width="40" />
+		<icon height="80" src="res/icon/ios/icon-40@2x.png" width="80" />
+		<icon height="57" src="res/icon/ios/icon.png" width="57" />
+		<icon height="114" src="res/icon/ios/icon@2x.png" width="114" />
+		<icon height="72" src="res/icon/ios/icon-72.png" width="72" />
+		<icon height="144" src="res/icon/ios/icon-72@2x.png" width="144" />
+		<icon height="29" src="res/icon/ios/icon-small.png" width="29" />
+		<icon height="58" src="res/icon/ios/icon-small@2x.png" width="58" />
+		<icon height="50" src="res/icon/ios/icon-50.png" width="50" />
+		<icon height="100" src="res/icon/ios/icon-50@2x.png" width="100" />
+	</platform>
+	<platform name="ios">
+		<splash height="480" src="res/screen/ios/Default~iphone.png" width="320" />
+		<splash height="960" src="res/screen/ios/Default@2x~iphone.png" width="640" />
+		<splash height="1024" src="res/screen/ios/Default-Portrait~ipad.png" width="768" />
+		<splash height="2048" src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" />
+		<splash height="768" src="res/screen/ios/Default-Landscape~ipad.png" width="1024" />
+		<splash height="1536" src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" />
+		<splash height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" width="640" />
+		<splash height="1334" src="res/screen/ios/Default-667h.png" width="750" />
+		<splash height="2208" src="res/screen/ios/Default-736h.png" width="1242" />
+		<splash height="1242" src="res/screen/ios/Default-Landscape-736h.png" width="2208" />
+	</platform>
+	<gap:splash src="res/screen/android/screen-ldpi-portrait.png" gap:density="ldpi" gap:platform="android" />
+	<gap:splash src="res/screen/android/screen-mdpi-portrait.png" gap:density="mdpi" gap:platform="android" />
+	<gap:splash src="res/screen/android/screen-hdpi-portrait.png" gap:density="hdpi" gap:platform="android" />
+	<gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:density="xhdpi" gap:platform="android" />
+	<gap:splash src="res/screen/blackberry/screen-225.png" gap:platform="blackberry" />
+	<gap:splash height="480" src="res/screen/ios/screen-iphone-portrait.png" width="320" gap:platform="ios" />
+	<gap:splash height="960" src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" gap:platform="ios" />
+	<gap:splash height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" gap:platform="ios" />
+	<gap:splash height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" gap:platform="ios" />
+	<gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
+	<access origin="*" />
+	<content src="index.html" />
+	<gap:config-file parent="UIStatusBarHidden" platform="ios">
+		<true />
+	</gap:config-file>
+	<gap:config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios">
+		<false />
+	</gap:config-file>
+	
+	<feature name="SocialSharing">
+		<param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+	</feature>
+</widget>

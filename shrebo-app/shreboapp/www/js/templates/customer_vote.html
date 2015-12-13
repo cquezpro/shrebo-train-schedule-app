@@ -1,0 +1,97 @@
+<!-- full template -->
+<div class="statusicons">
+	<i class="fa fa-map-marker faa-slow faa-burst geo"></i>
+</div>
+<div class="big_heading_box pulltop">
+	<div class="inner">
+		<h3>Wie voll war der Wagen?</h3>
+		<h6>
+			<%= view.getJourneyDisplay() %><br><%= view.getDateTimeDisplay()
+			%>
+		</h6>
+	</div>
+</div>
+<div class="scrollable" id="customer-vote-scroller">
+	<div style="height: 120%; padding-top: 10px">
+		<div class="down_box quickpoll" data-pollid="<%= poll.cid %>">
+			<div class="vote-radiobox" data-group="servicekey"
+				style="display: none">
+				<option class="vote-option active" data-option='<%= service_key %>'></option>
+			</div>
+			<div class="top_heading_box">
+				<select class='vote-radiobox action-list-select'
+					data-group='paxsection'>
+					<option class='vote-option' data-option='A'>Sektor A</option>
+					<option class='vote-option' data-option='B'>Sektor B</option>
+
+					<option class='vote-option' data-option='C'>Sektor C</option>
+					<option class='vote-option' data-option='D'>Sektor D</option>
+				</select>
+				<ul class='vote-radiobox' data-group='paxclass'>
+					<li class="vote-option" data-option='1st'><a
+						class="action-select-option" href="javascript:void(0)">1.</a></li>
+					<li class="vote-option" data-option='2nd'><a
+						class="action-select-option" href="javascript:void(0)">2.</a></li>
+				</ul>
+				<h2>Klasse</h2>
+			</div>
+			<div class="inner_parameter">
+				<div class="all_list vote-radiobox" data-group='paxload'>
+					<ul class="parameter_list green_box vote-option" data-option='low'>
+						<li></li>
+						<li><span class="progress_bar"></span></li>
+						<li></li>
+						<li><div class="round_circle action-select-option">
+								<span><%= view.getVoteLabel('low') %></span>
+							</div></li>
+					</ul>
+					<ul class="parameter_list yellow_box vote-option"
+						data-option='medium'>
+						<li></li>
+						<li><span class="progress_bar"></span></li>
+						<li></li>
+						<li><div class="round_circle action-select-option">
+								<span><%= view.getVoteLabel('medium') %></span>
+							</div></li>
+					</ul>
+					<ul class="parameter_list orange_box vote-option"
+						data-option='high'>
+						<li></li>
+						<li><span class="progress_bar"></span></li>
+						<li></li>
+						<li><div class="round_circle action-select-option">
+								<span><%= view.getVoteLabel('high') %></span>
+							</div></li>
+					</ul>
+					<ul class="parameter_list red_box vote-option"
+						data-option='overload'>
+						<li></li>
+						<li><span class="progress_bar"></span></li>
+						<li></li>
+						<li><div class="round_circle action-select-option">
+								<span><%= view.getVoteLabel('overload') %></span>
+							</div></li>
+					</ul>
+					<ul class="parameter_list red_box vote-option"
+						data-option='elsewhere'>
+						<li style="width: 60%; background: none;"><h3>Nicht
+								genommen</h3></li>
+						<li style="width: 1%; background: none;">&nbsp;</li>
+						<li style="width: 1%; background: none;">&nbsp;</li>
+						<li><div class="round_circle action-select-option"></div></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<ul class="link_txt">
+		<li><a href="javascript:void(0)" class="action-cast-vote"
+			data-pollid="<%= poll.cid %>">Senden</a></li>
+		<li><a href="javascript:void(0)" class="action-cancel-vote"
+			data-pollid="<%= poll.cid %>"><i data-pollid="<%= poll.cid %>"
+				class="fa fa-times-circle"></i></a></li>
+	</ul>
+</div>

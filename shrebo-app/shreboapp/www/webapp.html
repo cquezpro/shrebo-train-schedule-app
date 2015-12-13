@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.wrapper {
+	position: relative;
+	display: table;
+	margin: 0 auto !important;
+}
+
+.wrapper.iphone4 {
+	width: 400px;
+	height: 750px;
+}
+
+.wrapper.iphone5 {
+	width: 381px;
+	height: 803px;
+}
+
+.iphone-frame {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.webapp {
+	position: absolute;
+}
+
+.webapp.iphone4 {
+	top: 140px;
+	left: 42px;
+	width: 320px;
+	height: 480px;
+}
+
+.webapp.iphone5 {
+	top: 115px;
+	left: 32px;
+	width: 320px;
+	height: 568px;
+}
+
+,
+.infobox {
+	margin-left: 10px;
+}
+
+.poweredby {
+	position: fixed;
+	color: #274C92;
+	margin-left: 10px;
+	width: 150px;
+	bottom: 10%;
+}
+
+.download {
+	font-size: 20px !important;
+}
+
+#zenbox_tab {
+	top: 50% !important;
+}
+</style>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link rel="icon" href="icon.png" />
+<link rel="shortcut icon" href="icon.ico" />
+</head>
+<body>
+	<div class="row">
+		&nbsp;<br>&nbsp;
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-1">
+			<div class="infobox">
+				<img class="img-responsive pull-left" src="img/webapplogo.png">
+			</div>
+			<div class="poweredby">
+				<p>
+					powered by <a href="http://www.shrebo.com"><img
+						class="img-responsive pull-left" src="img/poweredby.png"></a>
+				</p>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="wrapper iphone5">
+				<img class="iphone-frame" src="img/iphone5-frame.png">
+				<iframe class="webapp iphone5" src="index.html" scrolling="no"
+					frameborder="no"></iframe>
+			</div>
+			<div></div>
+			<div class="col-md-3 col-lg-3 col-sm-1">&nbsp;</div>
+		</div>
+		<div class="col-md-2"></div>
+</body>
+<script>
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+        .test(navigator.userAgent)) {
+        window.location = 'index.html';
+    }
+</script>
+<script type="text/javascript"
+	src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+<style type="text/css" media="screen, projection">
+@import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+</style>
+<script type="text/javascript">
+    if (typeof (Zenbox) !== "undefined") {
+        Zenbox
+            .init({
+                dropboxID : "20310813",
+                url : "https://shrebo.zendesk.com",
+                tabTooltip : "Feedback",
+                tabImageURL : "https://p1.zdassets.com/external/zenbox/images/tab_feedback_right.png",
+                tabColor : "#006dcc",
+                tabPosition : "Right"
+            });
+    }
+</script>
+</html>

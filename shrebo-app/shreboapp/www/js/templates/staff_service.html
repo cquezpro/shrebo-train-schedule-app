@@ -1,0 +1,27 @@
+<div class="scrollable staff-service-scroller">
+		<div class="list_box">
+			<div class="blue_txt_box">
+				<div class="inner">
+					<h2>Streckenauswahl</h2>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="heading_row">
+					<div class="box01_lft">Strecke</div>
+					<div class="box02_lft">Datum</div>
+					<div class="box03_lft">Abfahrt-/Ankunft</div>
+				</div>
+				<ul class="body_row">
+					<% services.each(function(s, i) { %>
+					<a>
+						<li class='action-select service' data-serviceid='<%=i%>'>
+							<div class="box01_lft"><%=view.getServiceOD(s)%></div>
+							<div class="box02_lft"><%=view.getServiceDate(s)%></div>
+							<div class="box03_lft"><%=view.getServiceTime(s)%></div>
+					</li>
+					</a> <% }); %>
+					<li style="border-width:0"><div class="scroll-filler">&nbsp;</div></li>
+				</ul>
+			</div>
+		</div>
+</div>

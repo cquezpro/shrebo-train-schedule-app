@@ -1,0 +1,54 @@
+<input id="daterange" style="display: none; width: 100%" />
+<input id="timepick" style="display: none; width: 100%" />
+<div class="inner">
+	<div class="search_txt_area">
+		<h1>W&auml;hle Deine Pendlerstrecke</h1>
+		<p><i class="fa fa-info-circle"></i>&nbsp;<%=view.getInfoText()%></p>
+		<div class="form_group">
+			<div class="field_group_txt">Von</div>
+			<div class="address_box icon01">
+				<input type="text" id="from-station" /><a href="javascript:void(0)"><i
+					class="fa fa-times-circle action-reset" data-reset="#from-station"></i></a>
+			</div>
+		</div>
+		<div class="form_group">
+			<div class="field_group_txt">Nach</div>
+			<div class="address_box icon02">
+				<input type="text"  id="to-station"/><a href="javascript:void(0)"><i
+					class="fa fa-times-circle action-reset" data-reset="#to-station"></i></a>
+			</div>
+		</div>
+		<div class="form_group">
+			<div class="field_group_txt">Zeit</div>
+			<div class="small_field">
+				<div class="address_box">
+					<input type="text" class="timetext action-picktime" value="<%=view.getCurrentTime()%>" />
+				</div>
+				<ul class="select_box">
+					<li class="active"><a href="javascript:void(0)" data-queryby="departure" class="action-select-queryby">Ab</a></li>
+					<li><a href="javascript:void(0)" data-queryby="arrival" class="action-select-queryby">An</a></li>
+				</ul>
+				<div class="choose_date_box">
+					<a href="#" id="test_default" class="action-pickdate selected-date"> <i class="fa fa-calendar"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="form_group">
+			<div class="field_group_txt">KI.</div>
+			<div class="small_field">
+				<ul class="number_list">
+					<li><a href="javascript:void(0)" data-paxclass="1" class="action-select-paxclass"><span>1.</span></a></li>
+					<li class="active"><a href="javascript:void(0)" data-paxclass="2" class="action-select-paxclass"><span>2.</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="book_now_box">
+	<a href="javascript:void(0)" class="book_now action-query">SUCHEN</a>
+</div>
+<!--<div class="btm_bg"></div>-->
+<select name="demo" id="demo" class="changes" style="display: none;">
+	<option value="calendar_only">Calendar Only</option>
+</select>

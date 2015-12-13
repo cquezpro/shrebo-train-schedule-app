@@ -1,0 +1,9 @@
+<div style="text-align:left">
+	<% _.each(times, function(t) { %>
+		<% if(t.available) { %>
+		<a class="tag active" style="margin: 10px auto;" data-time="<%= t.time.getTime() %>"><%= $.mobiscroll.formatDate("HH:ii", t.time) %></a>
+		<% } else { %>	
+		<a class="tag" style="margin: 10px auto;" data-time="<%= t.time.getTime() %>"><%= $.mobiscroll.formatDate("HH:ii", t.time) %></a>
+		<% } %>
+	<% }); %>
+</div>

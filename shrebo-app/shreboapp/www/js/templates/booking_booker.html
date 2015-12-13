@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-md-12">
+		<img src="<%= model.shareable.get('picture_url') %>" id="shareable_img" class="img-responsive">
+	</div>
+</div>
+<section class="text-block">
+	<div class="small-font-black" id="reservation_label">
+		<%= model.shareable.get('label') %>
+	</div>
+	<div class="small-font-black" id="reservation_desc">
+		<%= model.shareable.get('description') %>
+	</div>
+</section>
+<form>
+	<h2 class="form-title-row">Buchung</h2>
+	<ul class="list">
+		<li class="list-row">
+			<a class="list-link" id="sel_from_date">Von<span class="list-val" id="from_date_display"><%= model.get('from_date') %></span></a>
+			<a class="list-link" id="sel_to_date">Bis<span class="list-val" id="to_date_display"><%= model.get('to_date') %></span></a>
+		</li>
+	</ul>
+	<div style="text-align:center !important;">
+		<a class="button button-blue" style="width:60%" id="cancel_btn">Cancel</a>
+	</div>
+</form>

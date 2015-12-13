@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>www</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.python.pydev.PyDevBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.aptana.projects.webnature</nature>
+		<nature>org.python.pydev.pythonNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>fabfile.py</name>
+			<type>1</type>
+			<location>/home/patrick/projects/shrebo-app/shreboapp/fabfile.py</location>
+		</link>
+		<link>
+			<name>freelancerpaul.com</name>
+			<type>2</type>
+			<locationURI>PARENT-1-PROJECT_LOC/freelancerpaul.com</locationURI>
+		</link>
+		<link>
+			<name>grunt</name>
+			<type>2</type>
+			<location>/home/patrick/projects/shrebo-app/shreboapp/grunt</location>
+		</link>
+		<link>
+			<name>hooks</name>
+			<type>2</type>
+			<location>/home/patrick/projects/shrebo-app/shreboapp/hooks</location>
+		</link>
+	</linkedResources>
+</projectDescription>

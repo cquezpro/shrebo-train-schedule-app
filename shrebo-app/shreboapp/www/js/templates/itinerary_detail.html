@@ -1,0 +1,49 @@
+<div class="deep_blue_box">
+	<div class="date_time_txt">
+		<p>&nbsp;</p>
+		<div class="red_img_box">
+			<img src="img/sbb_logo.png" alt="" border="0" />
+		</div>
+	</div>
+	<div class="button_box">
+		<div class="inner">
+			<ul class="inner_custom">
+				<li><a href="#searchresults" class="btn_link"><i
+						class="fa fa-reply"></i></a></li>
+			</ul>
+			<div class="top_txt">
+				<span><%= view.getJourneyDisplay() %></span> <%= view.getDateTimeDisplay() %>
+			</div>
+		</div>
+	</div>
+	<div class="white_header_box">
+		<a href="javascript:void(0)" class="action-seats">
+			<div class="green_arrow"></div>
+			<h3>Gleis <%= view.getStartPlatform() %>, Sektor <%= view.getBookingSection() %></h3> <span class="white_arrow"><i
+				class="fa fa-chevron-right"></i></span>
+		</a>
+	</div>
+</div>
+<div class="for_search_area scrollable" id="itinerary-detail-scroller">
+	<ul>
+		<div class="inner_dot_box">
+			<div class="inner" style='padding-top:36px'>
+				<h2>Fahrzeit <%= view.getDurationDisplay() %></h2>
+			</div>
+			<ul>
+				<% stops.each(function(s) { %>
+				<li>
+					<div class="line_dot_box">
+						<span class="white_dot"><%= view.getStopPlatform(s) %></span> <span
+							class="white_line"></span>
+					</div>
+					<div class="txt_number_box">
+						<span><%= view.getStopTime(s) %></span><%= view.getStopSign(s) %>
+					</div>
+				</li> <% }); %>
+			</ul>
+
+		</div>
+	</ul>
+</div>
+<a href="javascript:void(0)" class="btm_link action-select-itinerary">Den nehme ich.</a>

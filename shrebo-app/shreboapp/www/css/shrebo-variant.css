@@ -1,0 +1,56 @@
+/* voting radiobox active */
+.vote-radiobox .active .round_circle {
+    background-color: #78b22b !important;
+}
+
+.ui-page-active {
+	position:fixed;
+	/* height: 100%; */
+	top: 0;
+	visibility: visible;
+	width: 100%;
+	z-index: 2;
+	overflow: hidden;
+}
+
+body {
+	background: #587aff;
+}
+
+.page, .app, .content {
+	background: #587aff;
+}
+
+/* staff service selection */
+ul.body_row li.service.active {
+	background: gray;
+}
+
+/* date box in search results */
+.date_box {
+ background-color:#587aff;
+}
+
+.date_box p.departure_date {
+  color:white; 
+  width:92%; margin: auto;	
+}
+
+/* vote screen without top menu */
+.big_heading_box.pulltop {
+	top: 0;
+} 
+
+/* keyboard margin to signup button */
+
+.login_field_box {
+	margin-bottom: 20px;
+}
+
+.login_field_box input[type="text"]{
+	font: inherit !important;
+}
+
+.btn_login {
+	font: inherit !important;
+}

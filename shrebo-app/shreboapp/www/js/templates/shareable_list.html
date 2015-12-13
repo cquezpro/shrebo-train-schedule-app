@@ -1,0 +1,22 @@
+<div id="wrapper1" style="height:145px; top:45px;">
+	<div id="scroller">
+		<div class="list">
+			<% for(var i = 0; i < col.length; i++) { %>
+			<ul class="body_list <%= view.getConnectionColor(col.at(i)) %> select-connection" data-id="<%= col.at(i).cid %>">
+				<li>
+					<%= view.getTimeDisplay(col.at(i)) %>
+				</li>
+				<li>
+					0:29
+				</li>
+				<li>
+					0
+				</li>
+				<li>
+					S 7
+				</li>
+			</ul>
+			<% } %>
+		</div>
+	</div>
+</div>

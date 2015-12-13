@@ -1,0 +1,7 @@
+<div id="favoritedialog">
+	<select id="favpick">
+	<% _.each(services, function(service) { %>
+		<option value='<%= view.getCoord(service) %>'><%= view.getServiceText(service) %></option>
+	<% }); %>
+	</select>
+</div>

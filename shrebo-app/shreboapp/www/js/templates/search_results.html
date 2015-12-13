@@ -1,0 +1,49 @@
+<div class="big_heading_box">
+	<h2><%= view.getDeptCity(colto.at(0)) %>-<%=
+		view.getArrivalCity(colto.at(0)) %></h2>
+</div>
+<div class="blue_txt_box">
+	<div class="inner">
+		<ul class="inner_listing">
+			<li>Ab - An</li>
+			<li>Dauer</li>
+			<li>Gleis</li>
+			<li>&nbsp;</li>
+			<li>Detail</li>
+		</ul>
+	</div>
+</div>
+<div class="for_search_area scrollable" id="search-results-scroller">
+	<!-- ul is here to enable scroller -->
+	<ul>
+		<div class="body_white">
+			<!-- all TO -->
+			<% for(var i = 0; i < colto.length; i++) { %> <% var c = colto.at(i);%>
+			<% if(view.nextDateGroup(colto, i)) { %>
+			 <div class="date_box">
+			  <p class='departure_date'><%= view.getDepartureDate(c) %></p>
+			 </div>
+			<% } %>
+			<div class="white_row connection-row"
+				data-id="<%= c.cid %>">
+				<div class="inner">
+					<ul class="inner_listing">
+						<a href="javascript:void(0)">
+							<li class='recommendation action-select-itinerary' data-id="<%= c.cid %>" data-ref="<%=view.getReference(c)%>"><h2 class="recommend_txt">&nbsp;</h2>
+								<span class="time_txt"><%= view.getDeptHour(c) %>-<%=
+									view.getArrivalHour(c)%> </span><span class="info_txt"></span></li>
+							<li><%= view.getDurationDisplay(c) %></li>
+							<li><%= view.getPlatform(c) %></li>
+							<li class="occupation" data-id="<%= c.cid %>" data-ref="<%=view.getReference(c)%>">&nbsp;
+							<li class="action-detail"><span class="white_arrow"><i
+									class="fa fa-chevron-right"></i></span></li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<% } %>
+			<div class="scroll-filler" style="height:160px">&nbsp;</div>
+		</div>
+		
+	</ul>
+</div>
